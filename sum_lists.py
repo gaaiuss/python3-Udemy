@@ -11,23 +11,23 @@ lista_soma  = [2, 4, 6, 8]
 """
 
 
-lista_a = [1, 2, 3, 4, 5, 6, 7]
-lista_b = [10, 2, 3, 4]
+list_a = [1, 2, 3, 4, 5, 6, 7]
+list_b = [10, 2, 3, 4]
 
-lista_soma = [x + y for x, y in zip(lista_a, lista_b)]
-print(lista_soma)
+list_sum = [x + y for x, y in zip(list_a, list_b)]
+print(list_sum)
 
-# lista_soma = []
-# for i in range(len(lista_b)):
-#     lista_soma.append(lista_a[i] + lista_b[i])
-# print(lista_soma)
+# list_sum = []
+# for i in range(len(list_b)):
+#     list_sum.append(list_a[i] + list_b[i])
+# print(list_sum)
 
-# lista_soma = []
-# for i, _ in enumerate(lista_b):
-#     lista_soma.append(lista_a[i] + lista_b[i])
-# print(lista_soma)
+# list_sum = []
+# for i, _ in enumerate(list_b):
+#     list_sum.append(list_a[i] + list_b[i])
+# print(list_sum)
 
 # def zipper(list1, list2):
 #     interval = min(len(list1), len(list2))
 #     return [(list1[i] + list2[i]) for i in range(interval)]
-# print(zipper(lista_a, lista_b))
+# print(zipper(list_a, list_b))
