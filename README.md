@@ -3,7 +3,7 @@
 - Repository for python learning course
 - Exercises and examples
 
-# Setup:
+# Python Setup:
 
 - Execution Policy (To run virtual environment):
     - run PowerShell
