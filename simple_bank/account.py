@@ -3,7 +3,7 @@ from abc import ABC, abstractmethod
 
 class Account(ABC):
     def __init__(
-            self, agency: float, account: float, balance: float = 0
+            self, agency: int, account: int, balance: float = 0
     ) -> None:
         self.agency = agency
         self.account = account
@@ -20,6 +20,12 @@ class Account(ABC):
     def details(self, msg: str = '') -> float:
         print(f'{msg}\nYour balance is ${self.balance}')
         return self.balance
+
+    def __repr__(self):
+        class_name = f'{type(self).__name__}'
+        attrs = f'(Agency: {self.agency!r}, Account: {self.account!r}'\
+            f', Balance: {self.balance!r})'
+        return f'{class_name}{attrs}\n'
 
 
 class CurrentAccount(Account):
