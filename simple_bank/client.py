@@ -22,10 +22,11 @@ class People:
     def age(self, age: int) -> None:
         self._age = age
 
-    def __repr__(self):
+    def __repr__(self) -> str:
         class_name = f'{type(self).__name__}'
-        attrs = f'Name: {self.name!r}\nAge: {self.age!r}'
-        return f'{class_name} {attrs}\nAssignment: Shinigami Substitute'
+        attrs = f'(Name: {self.name!r}Age: {self.age!r}'\
+            f'Assignment: Shinigami Substitute)'
+        return f'{class_name}{attrs}\n'
 
 
 class Client(People):
@@ -36,16 +37,22 @@ class Client(People):
     def create_account(
             self, account_type: str, agency: int, account: int,
             balance: float = 0
-    ) -> None:
+    ) -> Account | None:
         if account_type == 'current':
             self.account = CurrentAccount(agency, account, balance)
+            return self.account
         elif account_type == 'savings':
             self.account = SavingsAccount(agency, account, balance)
+            return self.account
         else:
             print('Unknown account type')
+            return None
+
+    def __repr__(self) -> str:
+        return super().__repr__() + f', Account: {self.account}'
 
 
 if __name__ == '__main__':
-    client = Client('Caio Guilherme', 25)
-    client.create_account('current', 123, 12345, 100)
+    client = Client('Kurosaki Ichigo', 17)
+    client.create_account('savings', 111, 151515, 20000)
     print(client)
